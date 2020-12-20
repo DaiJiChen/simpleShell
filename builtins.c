@@ -23,5 +23,5 @@ echo(size_t argc, char **argv, int retcode) {
     argc = argc;
     argv = argv;
     retcode = 0;
-    return 0;
+    return retcode;
 }
