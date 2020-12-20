@@ -25,6 +25,7 @@ void handle_SIGINT(int sigNo) {
 
 void parse_opt(char *command, int argc, char *argv[]) {
     char opt;
+    command = NULL;
     while ((opt = getopt(argc, argv, "xc:")) != -1) {
         switch (opt) {
             case 'x':
@@ -34,15 +35,14 @@ void parse_opt(char *command, int argc, char *argv[]) {
                 command = optarg;
                 break;
             default:
-                (void)fprintf(stderr, "usage: %s [-x] [-c command]\n",
-                              getprogname());
+                fprintf(stderr, "usage: %s [-x] [-c command]\n");
                 exit(EXIT_FAILURE);
         }
     }
 }
 
 int main(int argc, char *argv[]) {
-    char *command = NULL;
+    char *command;
     char input[MAX_COMMAND_LEN];
     char path[PATH_MAX];
 
