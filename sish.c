@@ -1,7 +1,3 @@
-#include <bsd/stdlib.h>
-#include <bsd/string.h>
-
-
 #include <err.h>
 #include <errno.h>
 #include <fcntl.h>
