@@ -78,7 +78,7 @@ int main(int argc, char *argv[]) {;
 
     if(command != NULL) {
         //execute(command);
-        printf("%s \n", command);
+        printf("command is: %s \n", command);
     }
     else {
         printf("%s$ ", getprogname());
@@ -86,7 +86,7 @@ int main(int argc, char *argv[]) {;
             printf("%s$ ", getprogname());
             input[strlen(input) - 1] = '\0'; // overwrite newline character
             //execute(input);
-            printf("%s \n", command);
+            printf("command is: %s \n", command);
         }
     }
 
