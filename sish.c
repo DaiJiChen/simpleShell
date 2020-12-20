@@ -81,6 +81,7 @@ int main(int argc, char *argv[]) {;
         printf("%s \n", command);
     }
     else {
+        printf("%s$ ", getprogname());
         while (fgets(input, sizeof(input), stdin)!= NULL) {
             printf("%s$ ", getprogname());
             input[strlen(input) - 1] = '\0'; // overwrite newline character
