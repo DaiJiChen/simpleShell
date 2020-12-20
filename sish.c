@@ -41,7 +41,7 @@ void parse_opt(int argc, char *argv[]) {
     }
 }
 
-int main(int argc, char *argv[]) {;
+int main(int argc, char *argv[]) {
     char input[MAX_COMMAND_LEN];
     char path[PATH_MAX];
 
@@ -86,7 +86,7 @@ int main(int argc, char *argv[]) {;
             printf("%s$ ", getprogname());
             input[strlen(input) - 1] = '\0'; // overwrite newline character
             //execute(input);
-            printf("input is: %s \n", input;
+            printf("input is: %s \n", input);
         }
     }
 
