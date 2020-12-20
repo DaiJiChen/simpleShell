@@ -50,6 +50,8 @@ int main(int argc, char *argv[]) {;
         exit(EXIT_FAILURE);
     }
 
+    printf("PASS");
+
     setprogname("sish");
 
     if(setenv("myShell", path, 1) == -1) {
@@ -57,14 +59,20 @@ int main(int argc, char *argv[]) {;
         exit(EXIT_FAILURE);
     }
 
+    printf("PASS");
+
     /* change the behavior of interrupt signal */
     if(signal(SIGINT, handle_SIGINT) == SIG_ERR) {
         fprintf(stderr, "failed to handle SIGINT");
         exit(EXIT_FAILURE);
     }
 
+    printf("PASS");
+
     command = NULL;
     parse_opt(argc, argv);
+
+    printf("PASS");
 
     if(command != NULL) {
         //execute(command);
