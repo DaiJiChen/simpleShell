@@ -12,11 +12,16 @@
 
 int
 cd(size_t argc, char **argv) {
-
+    argc = argc;
+    argv = argv;
+    return 0;
 }
 
 
 int
 echo(size_t argc, char **argv, int retcode) {
-
+    argc = argc;
+    argv = argv;
+    retcode = 0;
+    return 0;
 }
