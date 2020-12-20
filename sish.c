@@ -17,16 +17,16 @@ int MAX_COMMAND_LEN = 512;
 /* global var */
 int is_executing;
 int x_flag;
+char *command;
 
 void handle_SIGINT(int sigNo) {
     sigNo = sigNo;
     printf("\n");
 }
 
-void parse_opt(char *command, int argc, char *argv[]) {
+void parse_opt(int argc, char *argv[]) {
     char opt;
-    command = NULL;
-    while ((opt = getopt(argc, argv, "xc:")) != -1) {
+    while ((opt = getopt(argc, argv, "cx:")) != -1) {
         switch (opt) {
             case 'x':
                 x_flag = 1;
@@ -35,14 +35,13 @@ void parse_opt(char *command, int argc, char *argv[]) {
                 command = optarg;
                 break;
             default:
-                fprintf(stderr, "usage: %s [-x] [-c command]\n");
+                fprintf(stderr, "usage: %s [-x] [-c command]\n", "./sish");
                 exit(EXIT_FAILURE);
         }
     }
 }
 
-int main(int argc, char *argv[]) {
-    char *command;
+int main(int argc, char *argv[]) {;
     char input[MAX_COMMAND_LEN];
     char path[PATH_MAX];
 
@@ -64,7 +63,8 @@ int main(int argc, char *argv[]) {
         exit(EXIT_FAILURE);
     }
 
-    parse_opt(command, argc, argv);
+    command = NULL;
+    parse_opt(argc, argv);
 
     if(command != NULL) {
         //execute(command);
