@@ -45,6 +45,8 @@ int main(int argc, char *argv[]) {;
     char input[MAX_COMMAND_LEN];
     char path[PATH_MAX];
 
+    printf("PASS");
+
     if(realpath(argv[0], path) == NULL) {
         fprintf(stderr, "cannot solve path");
         exit(EXIT_FAILURE);
